@@ -21,7 +21,7 @@ class HashNode<K, V> {
 }
 
 //Class to represent entire hash table
-public class Map<K, V> {
+public class Map <K, V> {
 
 	// bucketArray is used to store array of chains
 	private ArrayList<HashNode<K, V>> bucketArray;
@@ -59,7 +59,7 @@ public class Map<K, V> {
 	private int getBucketIndex(K key) {
 		int hashCode = hashCode(key);
 		int index = hashCode % numBuckets;
-		// Ternary Operation
+		//Ternary Operation
 		index = index < 0 ? index * -1 : index;
 
 		return index;
@@ -129,7 +129,7 @@ public class Map<K, V> {
 	// Adds a key value pair to hash
 	public void add(K key, V value) {
 		// Find head of chain for given key
-		int bucketIndex = getBucketIndex(key);
+		int bucketIndex = getBucketIndex(key); 
 		int hashCode = hashCode(key);
 
 		HashNode<K, V> head = bucketArray.get(bucketIndex);
@@ -192,5 +192,5 @@ public class Map<K, V> {
 	@Override
 	public String toString() {
 		return "Map List{" + bucketArray + "}";
-	}
+	}	
 }
